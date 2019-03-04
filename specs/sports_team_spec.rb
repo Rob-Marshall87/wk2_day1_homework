@@ -29,4 +29,10 @@ class TestSportsTeam < MiniTest::Test
     sports_team.players += ["player3"]
     assert_equal(["player1", "player2", "player3"], sports_team.players)
   end
+
+  def test_if_player_is_in_the_team
+    sports_team = SportsTeam.new("Edinburgh", ["player1", "player2"], "Joe Smit")
+    assert_equal(true, sports_team.players.include?("player1"))
+  end
+
 end
